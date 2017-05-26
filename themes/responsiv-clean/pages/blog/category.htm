@@ -1,0 +1,29 @@
+title = "Blog Way"
+url = "/blog/way/:slug/:page?"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/category"
+
+[resources]
+less[] = "pages/blog.less"
+==
+<div class="category-title">
+    <h1>Way: {{ category.name }}</h1>
+</div>
+
+<div class="blog-posts">
+    {% partial 'blog/posts' %}
+</div>

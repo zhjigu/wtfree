@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+/vendor/*
+/config/*
+/storage/*
+/artisan
+/phpinfo.php
+.htaccess
