@@ -20,8 +20,20 @@ categoryPage = "blog/category"
 [resources]
 less[] = "pages/blog.less"
 ==
+<?php
+function onEnd()
+{
+    if ($this->category) {
+        $this->page->title = $this->category->name;
+    }
+    else {
+        return Redirect::to($this->pageUrl('404'));
+    }
+}
+?>
+==
 <div class="category-title">
-    <h1>Way: {{ category.name }}</h1>
+    <h4>{{ category.description }}</h4>
 </div>
 
 <div class="blog-posts">
